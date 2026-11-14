@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cqa1xpkaj3u8h"]
+
+[ext_resource type="Script" uid="uid://laijno3db4p6" path="res://Scripts/ball.gd" id="1_s0g25"]
+[ext_resource type="Shader" uid="uid://cgdyrgmulpbho" path="res://Scenes/Prefabs/ball.gdshader" id="2_doyp4"]
+[ext_resource type="Texture2D" uid="uid://ccbrd0uy35p26" path="res://Assets/teveg.png" id="2_s0g25"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rxjxn"]
+friction = 0.4
+bounce = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_doyp4"]
+shader = ExtResource("2_doyp4")
+shader_parameter/flash = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfkbx"]
+radius = 354.70505
+
+[node name="Ball" type="RigidBody2D" unique_id=402936797]
+mass = 0.25
+physics_material_override = SubResource("PhysicsMaterial_rxjxn")
+script = ExtResource("1_s0g25")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1870289981]
+material = SubResource("ShaderMaterial_doyp4")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_s0g25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=713556648]
+position = Vector2(-2, 5)
+rotation = -0.74245447
+scale = Vector2(0.04008228, 0.036490515)
+shape = SubResource("CircleShape2D_lfkbx")

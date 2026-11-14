@@ -1,0 +1,168 @@
+[gd_scene format=4 uid="uid://cjanwm3sy2x37"]
+
+[ext_resource type="Script" uid="uid://r11tnkbhthe2" path="res://Scripts/Level.gd" id="1_1bssr"]
+[ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_pay8t"]
+[ext_resource type="Texture2D" uid="uid://c6yu7kuxtur61" path="res://Assets/Spritesheet/64grave.jpg" id="3_gw1is"]
+[ext_resource type="Texture2D" uid="uid://d18m6uj7sybg2" path="res://Assets/Spritesheet/deepdirt.jpg" id="4_3cagf"]
+[ext_resource type="Texture2D" uid="uid://jaegp53ccc7w" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="5_wqbaa"]
+[ext_resource type="PackedScene" uid="uid://cqa1xpkaj3u8h" path="res://Scenes/Prefabs/ball.tscn" id="6_3cagf"]
+[ext_resource type="Script" uid="uid://domyi75bwl5ad" path="res://Scripts/GameUI.gd" id="6_66mfc"]
+[ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="7_j7jun"]
+[ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="8_gwcy2"]
+[ext_resource type="Texture2D" uid="uid://c6ytvk8632xii" path="res://Assets/Splash/mount.png" id="9_3cagf"]
+[ext_resource type="Script" uid="uid://cxggtkc2e3sb5" path="res://Scenes/Levels/game_camera.gd" id="10_5vjlm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs0qk"]
+texture = ExtResource("5_wqbaa")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 32, 32, 32, 32, -32, -32, -32)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 16, -32, 16)
+0:2/0/physics_layer_0/polygon_0/one_way = true
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 0, -32, 0)
+4:0/0 = 0
+4:1/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+2:5/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:1/0 = 0
+1:1/0 = 0
+3:1/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3cagf"]
+texture = ExtResource("3_gw1is")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vjlm"]
+texture = ExtResource("4_3cagf")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_ywwrl"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_gs0qk")
+sources/1 = SubResource("TileSetAtlasSource_3cagf")
+sources/2 = SubResource("TileSetAtlasSource_5vjlm")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rndpx"]
+texture = ExtResource("5_wqbaa")
+texture_region_size = Vector2i(64, 64)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 16, 0, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_2fcbi"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_rndpx")
+
+[node name="Level_01" type="Node2D" unique_id=250055998]
+script = ExtResource("1_1bssr")
+
+[node name="Player" parent="." unique_id=382966345 instance=ExtResource("2_pay8t")]
+z_index = 1
+position = Vector2(150, 318)
+move_speed = null
+jump_force = null
+gravity = null
+max_jump_count = null
+player_id = null
+tint = null
+kick_range = null
+kick_force = null
+double_jump = null
+
+[node name="Player2" parent="." unique_id=686673877 instance=ExtResource("2_pay8t")]
+position = Vector2(922, 343)
+move_speed = null
+jump_force = null
+gravity = null
+max_jump_count = null
+player_id = 2
+tint = null
+kick_range = null
+kick_force = null
+double_jump = null
+
+[node name="Level" type="Node2D" parent="." unique_id=1790261152]
+
+[node name="Ground" type="TileMapLayer" parent="Level" unique_id=392685192]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAgAAgAAAAAAAAAAAAkAAgAAAAAAAAABAAkAAgAAAAAAAAACAAkAAgAAAAAAAAADAAkAAgAAAAAAAAAEAAkAAgAAAAAAAAAEAAoAAgAAAAAAAAADAAoAAgAAAAAAAAACAAoAAgAAAAAAAAABAAoAAgAAAAAAAAAAAAoAAgAAAAAAAAAEAAgAAgAAAAAAAAANAAgAAgAAAAAAAAANAAkAAgAAAAAAAAANAAoAAgAAAAAAAAAOAAgAAgAAAAAAAAAOAAkAAgAAAAAAAAAOAAoAAgAAAAAAAAAPAAgAAgAAAAAAAAAPAAkAAgAAAAAAAAAPAAoAAgAAAAAAAAAQAAgAAgAAAAAAAAAQAAkAAgAAAAAAAAAQAAoAAgAAAAAAAAARAAgAAgAAAAAAAAARAAkAAgAAAAAAAAARAAoAAgAAAAAAAAASAAgAAgAAAAAAAAASAAkAAgAAAAAAAAASAAoAAgAAAAAAAAATAAgAAgAAAAAAAAATAAkAAgAAAAAAAAATAAoAAgAAAAAAAAAUAAgAAgAAAAAAAAAUAAkAAgAAAAAAAAAUAAoAAgAAAAAAAAAVAAgAAgAAAAAAAAAVAAkAAgAAAAAAAAAVAAoAAgAAAAAAAAAKAAoAAgAAAAAAAAALAAoAAgAAAAAAAAAMAAoAAgAAAAAAAAAFAAoAAgAAAAAAAAAGAAoAAgAAAAAAAAAHAAoAAgAAAAAAAAAIAAoAAgAAAAAAAAAJAAoAAgAAAAAAAAD//woAAgAAAAAAAAD//wkAAgAAAAAAAAD//wgAAgAAAAAAAAD//wcAAgAAAAAAAAD//wYAAgAAAAAAAAD//wUAAgAAAAAAAAD//wQAAgAAAAAAAAD//wMAAgAAAAAAAAD//wIAAgAAAAAAAAD//wEAAgAAAAAAAAD//wAAAgAAAAAAAAAAAAcAAQAAAAAAAAABAAcAAQAAAAAAAAACAAcAAQAAAAAAAAADAAcAAQAAAAAAAAAEAAcAAQAAAAAAAAAFAAcAAQAAAAAAAAAIAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAMAAcAAQAAAAAAAAANAAcAAQAAAAAAAAAOAAcAAQAAAAAAAAAPAAcAAQAAAAAAAAAQAAcAAQAAAAAAAAARAAcAAQAAAAAAAAASAAcAAQAAAAAAAAAUAAcAAQAAAAAAAAAVAAcAAQAAAAAAAAABAAgAAgAAAAAAAAACAAgAAgAAAAAAAAADAAgAAgAAAAAAAAAGAAcAAQAAAAAAAAAHAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAFAAgAAgAAAAAAAAAFAAkAAgAAAAAAAAAGAAgAAgAAAAAAAAAGAAkAAgAAAAAAAAAHAAgAAgAAAAAAAAAHAAkAAgAAAAAAAAAIAAgAAgAAAAAAAAAIAAkAAgAAAAAAAAAJAAgAAgAAAAAAAAAJAAkAAgAAAAAAAAAKAAgAAgAAAAAAAAAKAAkAAgAAAAAAAAALAAgAAgAAAAAAAAALAAkAAgAAAAAAAAAMAAgAAgAAAAAAAAAMAAkAAgAAAAAAAAAWAAcAAQAAAAAAAAAWAAgAAgAAAAAAAAAWAAkAAgAAAAAAAAAWAAoAAgAAAAAAAAAXAAoAAgAAAAAAAAAXAAkAAgAAAAAAAAAXAAgAAgAAAAAAAAAXAAcAAgAAAAAAAAAXAAIAAgAAAAAAAAAXAAMAAgAAAAAAAAAXAAQAAgAAAAAAAAAXAAUAAgAAAAAAAAAXAAYAAgAAAAAAAAAXAP//AgAAAAAAAAAXAAAAAgAAAAAAAAAXAAEAAgAAAAAAAAATAAcAAQAAAAAAAAD///7/AgAAAAAAAAD/////AgAAAAAAAAD///3/AgAAAAAAAAAXAP7/AgAAAAAAAAAXAP3/AgAAAAAAAAAXAPn/AgAAAAAAAAAXAPr/AgAAAAAAAAAXAPv/AgAAAAAAAAAXAPz/AgAAAAAAAAD///j/AgAAAAAAAAD///n/AgAAAAAAAAD///r/AgAAAAAAAAD///v/AgAAAAAAAAD///z/AgAAAAAAAAAEAAUAAAACAAQAAAALAAUAAAACAAQAAAA=")
+tile_set = SubResource("TileSet_ywwrl")
+
+[node name="Traps" type="TileMapLayer" parent="Level" unique_id=308352179 groups=["Traps"]]
+use_parent_material = true
+position = Vector2(9, 325)
+tile_map_data = PackedByteArray("AAAMAAkAAAAAAAUAAAALAAkAAAAAAAUAAAAKAAkAAAAAAAUAAAAJAAkAAAAAAAUAAAAIAAkAAAAAAAUAAAAHAAkAAAAAAAUAAAAGAAkAAAAAAAUAAAAFAAkAAAAAAAUAAAA=")
+tile_set = SubResource("TileSet_2fcbi")
+
+[node name="SpawnPoint" type="Marker2D" parent="Level" unique_id=1591847469]
+unique_name_in_owner = true
+position = Vector2(174, 383)
+
+[node name="Ball" parent="Level" unique_id=856632998 instance=ExtResource("6_3cagf")]
+position = Vector2(513, 205)
+
+[node name="UserInterface" type="CanvasLayer" parent="." unique_id=1062757528]
+
+[node name="GameUI" type="Control" parent="UserInterface" unique_id=1889427194]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_66mfc")
+
+[node name="Score" type="Control" parent="UserInterface/GameUI" unique_id=1852598412]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreTexture" type="TextureRect" parent="UserInterface/GameUI/Score" unique_id=514864551]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 116.0
+offset_bottom = 116.0
+texture = ExtResource("7_j7jun")
+stretch_mode = 4
+
+[node name="ScoreLabel" type="Label" parent="UserInterface/GameUI/Score" unique_id=164155028]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 104.0
+offset_top = 42.0
+offset_right = 148.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0.910156, 0.730469, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_gwcy2")
+theme_override_font_sizes/font_size = 32
+text = "x 3"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2107693010]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=934872129]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_3cagf")
+
+[node name="GameCamera" type="Camera2D" parent="." unique_id=131465892]
+script = ExtResource("10_5vjlm")
